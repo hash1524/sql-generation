@@ -39,8 +39,8 @@ def main(): # GENERATE MANY SQLS, cost range between[1w, 10w].
             explain_analyze_query = "explain (analyze, format json) " + query
             cursor.execute(explain_analyze_query)
             result = cursor.fetchall()[0][0][0]['Plan']
-            # print(explain_analyze_query+"\n")
-            # print(result)
+            print(explain_analyze_query+"\n")
+            print(result)
             with open("testsql/sql_"+str(query_id)+".sql","w") as f1:
                 f1.write(explain_analyze_query)
             with open("testsql/analyze_resault_"+str(query_id)+".json","w") as f2:
@@ -57,5 +57,9 @@ def gen_sql_tags():
         id = id + 1
 
 if __name__ == '__main__':
-    # main()
+    main()
     gen_sql_tags()
+
+
+
+
