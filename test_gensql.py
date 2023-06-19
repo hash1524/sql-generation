@@ -27,7 +27,7 @@ def main(): # GENERATE MANY SQLS, cost range between[1w, 10w].
         #print(log_path)
     else:
         print("error")
-    db, cursor = base.connect_server("tpch", "postgresql")
+    db, cursor = base.connect_server("bi", "postgresql")
     queries = []
     with open(query_to_path, 'r') as f:
         queries.extend(f.read().split('\n')) # queries = [sql, sql, sql, ...]

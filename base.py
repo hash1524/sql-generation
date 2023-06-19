@@ -25,8 +25,8 @@ def connect_server(dbname, server_name='postgresql'):
         while not sucess and count < 3:
             try:
                 # db = psycopg2.connect(database=dbname, user="lixizhang", password="xi10261026zhang", host="166.111.5.177", port="5433")
-                db = psycopg2.connect(database=dbname, user="postgres", password="postgres",
-                                      host="166.111.121.62")
+                db = psycopg2.connect(database="bi", user="bi", password="bi",
+                                      host="18.60.133.185")
                 # print("ok db")
                 cursor = db.cursor()
                 sucess = 1

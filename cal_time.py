@@ -44,7 +44,7 @@ def connect_server(dbname, server_name):
         cursor = db.cursor()
         return db, cursor
     elif server_name == 'postgresql':
-        db = psycopg2.connect(database=dbname, user="lixizhang", password="xi10261026zhang", host="166.111.5.177", port="5433")
+        db = psycopg2.connect(database=dbname, user="bi", password="bi", host="18.60.133.185", port="5432")
         cursor = db.cursor()
         return db, cursor
     else:
@@ -312,7 +312,7 @@ def hillclimb_generate_queries(dbname, type, target_value, error, num_queries, t
     with open("./sql-template/sql_templates.log", 'r') as f:
         query_templates.extend(f.read().split(';'))
 
-    db, cursor = connect_server("tpch", "postgresql")
+    db, cursor = connect_server("bi", "postgresql")
     schema = get_table_structure(cursor, "postgresql")
 
     ok_queries = set(())
